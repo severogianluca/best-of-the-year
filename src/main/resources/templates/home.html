@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best of the year</title>
+</head>
+
+<body>
+    <h1>Best of the year by <span th:text="${name}" /></h1>
+
+    <h2>Film storici</h2>
+    <ul>
+        <li th:each="movie : ${movies}">
+            <span th:text="${movie.titolo}" /> -
+            <span th:text="${movie.durataMin}" /> minuti
+        </li>
+    </ul>
+
+    <h2>Ascolta della buona musica</h2>
+    <ul>
+        <li th:each="song : ${songs}">
+            <span th:text="${song.titolo}" /> -
+            <span th:text="${song.nomeArtista}" />
+    </ul>
+
+</body>
+
+</html>

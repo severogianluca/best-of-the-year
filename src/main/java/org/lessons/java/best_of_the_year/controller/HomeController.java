@@ -6,9 +6,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.ArrayList;
 import java.util.List;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequestMapping("/")
@@ -18,15 +20,36 @@ public class HomeController {
     public String home(Model model) {
         model.addAttribute("name", "Gianluca Severo");
 
-        List<Movie> movies = getBestMovie();
-        model.addAttribute("movies", movies);
-
-        List<Song> songs = getBestSong();
-        model.addAttribute("songs", songs);
-        
         return "home";
     }
 
+    @GetMapping("/movies")
+    public String movies(Model model) {
+        List<Movie> movies = getBestMovie();
+        model.addAttribute("movies", movies);
+        return "movies";
+    }
+
+    @GetMapping("/songs")
+    public String songs(Model model) {
+        List<Song> songs = getBestSong();
+        model.addAttribute("songs", songs);
+        return "songs";
+    }
+
+    @GetMapping("/songs/{id}")
+    public String getSongById(@PathVariable("id")int songId, Model model) {
+        List<Song> songs = getBestSong();
+        for(Song song : songs) {
+            if(song.getId()== songId){
+                model.addAttribute(song);
+            }
+        }
+        return "song";
+
+    }
+
+    // Lista di oggetti
     private List<Movie> getBestMovie() {
         List<Movie> listMovie = new ArrayList<>();
 

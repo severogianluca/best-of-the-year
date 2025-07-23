@@ -1,5 +1,6 @@
 package org.lessons.java.best_of_the_year.classes;
 
+
 public class Movie {
     private int id;
     private String titolo;
@@ -37,6 +38,10 @@ public class Movie {
 
     public void setDurataMin(int durataMin) {
         this.durataMin = durataMin;
+    }
+
+    public String getTitle(){
+        return String.format("%s, ", titolo);
     }
 
 }

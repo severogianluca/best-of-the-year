@@ -15,7 +15,7 @@
     <h2 class="mt-3 mb-3">I film che hanno fatto la storia</h2>
 
     <div class="d-flex justify-content-between">
-        <a th:each="movie : ${movies}" th:href="@{/movies/{id}(id=${movie.id})}" class="d-flex flex-column border border-1 p-2">
+        <a th:each="movie : ${listMovie}" th:href="@{/movies/{id}(id=${movie.id})}" class="d-flex flex-column border border-1 p-2">
             <div th:text="|Titolo del film: ${movie.titolo}|" />
             <div th:text="|Durata del film: ${movie.durataMin} min|" />
         </a>

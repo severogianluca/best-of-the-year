@@ -25,8 +25,8 @@ public class HomeController {
 
     @GetMapping("/movies")
     public String movies(Model model) {
-        List<Movie> movies = getBestMovie();
-        model.addAttribute("movies", movies);
+        // List<Movie> movies = getBestMovie();
+        model.addAttribute("listMovie", getBestMovie());
         return "movies";
     }
 
@@ -43,8 +43,8 @@ public class HomeController {
 
     @GetMapping("/songs")
     public String songs(Model model) {
-        List<Song> songs = getBestSong();
-        model.addAttribute("songs", songs);
+        // List<Song> songs = getBestSong();
+        model.addAttribute("listSong",  getBestSong());
         return "songs";
     }
 

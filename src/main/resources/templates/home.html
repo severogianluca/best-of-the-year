@@ -17,10 +17,19 @@
 
 
 <body>
-    <header th:insert="~{fragments/navbar :: navbar}"/>
-    
+    <header th:insert="~{fragments/navbar :: navbar}" />
+
     <main>
-        <h1>Best of the year by <span th:text="${name}" /></h1>
+        <div class="container text-center mt-5">
+            <h1>Best of the year by <span th:text="${name}" /></h1>
+            <div class="mb-3">
+                <img src="/img/2025logo.png" alt="2025-logo">
+            </div>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione aliquid illo, adipisci tenetur, unde harum ea eum fugiat laudantium accusamus nesciunt, officiis officia quas aut. Vel ullam modi accusamus natus! Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem excepturi quod laborum ducimus fugit similique dicta sequi error maxime ex commodi optio ipsum nulla sit nobis ullam, itaque nostrum deserunt. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam facere in blanditiis vel nulla adipisci fugiat, odit velit dolores consequatur iste corrupti nemo cum explicabo excepturi perferendis tempora, laborum eos? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem rerum atque cumque eos sint doloremque ex, voluptate sit aperiam modi quasi esse sapiente soluta magni nemo nulla nihil similique numquam?</p>
+
+
+        </div>
+
     </main>
 
 

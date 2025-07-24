@@ -9,10 +9,20 @@
 
     <!-- Boostrap -->
     <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.3/css/bootstrap.min.css}" />
+    <!-- css -->
+    <link rel="stylesheet" href="/css/style.css" />
+
 </head>
 
+
+
 <body>
-    <h1>Best of the year by <span th:text="${name}" /></h1>
+    <header th:insert="~{fragments/navbar :: navbar}"/>
+    
+    <main>
+        <h1>Best of the year by <span th:text="${name}" /></h1>
+    </main>
+
 
 
 </body>

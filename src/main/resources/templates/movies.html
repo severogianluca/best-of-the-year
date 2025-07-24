@@ -5,17 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movies</title>
+
+    <!-- Boostrap -->
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.3/css/bootstrap.min.css}" />
 </head>
 
-<body>
-    <h1>Film storici</h1>
-    <h2>
-        <span>I miei film preferiti sono</span>
-        <span th:each="movie : ${movies}">
-        , <span th:text="${movie.titolo}" /> 
-    
-    </span>
-    </h2>
+<body class="container">
+    <h1 class="text-center">Film storici</h1>
+    <h2 class="mt-3 mb-3">I film che hanno fatto la storia</h2>
+
+    <div class="d-flex justify-content-between">
+        <div th:each="movie : ${movies}" class="d-flex flex-column ">
+            <div th:text="|Titolo del film: ${movie.titolo}|" />
+            <div th:text="|Durata del film: ${movie.durataMin} min|" />
+        </div>
+    </div>
+
+
 
 </body>
 

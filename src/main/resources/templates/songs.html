@@ -4,18 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movies</title>
+    <title>Songs</title>
+
+    <!-- Boostrap -->
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.3/css/bootstrap.min.css}" />
 </head>
 
-<body>
-    <h1>Titoli storici</h1>
-    <h2>
-        <span>I brani che ascolto </span>
-        <span th:each="song : ${songs}">
-        , <span th:text="${song.titolo}" /> 
-    
-    </span>
-    </h2>
+<body class="container">
+    <h1 class="text-center">Golden Age of Hip-Hop</h1>
+    <h2 class="mt-3 mb-3">I titoli che hanno fatto la storia</h2>
+
+    <div class="d-flex justify-content-between">
+        <div th:each="song : ${songs}" class="d-flex flex-column ">
+            <div th:text="|Titolo della canzone: ${song.titolo}|" />
+            <div th:text="|Nome artista: ${song.nomeArtista}|" />
+        </div>
+    </div>
+
+
 
 </body>
 

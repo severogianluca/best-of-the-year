@@ -30,6 +30,17 @@ public class HomeController {
         return "movies";
     }
 
+    @GetMapping("/movies/{id}")
+    public String getMovieById(@PathVariable("id") int movieId, Model model) {
+        List<Movie> movies = getBestMovie();
+        for (Movie movie : movies) {
+            if (movie.getId() == movieId) {
+                model.addAttribute(movie);
+            }
+        }
+        return "movie";
+    }
+
     @GetMapping("/songs")
     public String songs(Model model) {
         List<Song> songs = getBestSong();
@@ -38,15 +49,14 @@ public class HomeController {
     }
 
     @GetMapping("/songs/{id}")
-    public String getSongById(@PathVariable("id")int songId, Model model) {
+    public String getSongById(@PathVariable("id") int songId, Model model) {
         List<Song> songs = getBestSong();
-        for(Song song : songs) {
-            if(song.getId()== songId){
+        for (Song song : songs) {
+            if (song.getId() == songId) {
                 model.addAttribute(song);
             }
         }
         return "song";
-
     }
 
     // Lista di oggetti

@@ -15,11 +15,13 @@
     <h2 class="mt-3 mb-3">I titoli che hanno fatto la storia</h2>
 
     <div class="d-flex justify-content-between">
-        <div th:each="song : ${songs}" class="d-flex flex-column ">
-            <div th:text="|Titolo della canzone: ${song.titolo}|" />
-            <div th:text="|Nome artista: ${song.nomeArtista}|" />
-        </div>
+        <a th:each="song : ${songs}" th:href="@{/songs/{id}(id=${song.id})}"
+            class="d-flex flex-column  border border-1 p-2">
+            <div th:text="|Titolo della canzone: ${song.titolo}|"></div>
+            <div th:text="|Nome artista: ${song.nomeArtista}|"></div>
+        </a>
     </div>
+    <div th:insert="~{fragments/buttons :: button('/', 'Home Page')}" class="mt-5"></div>
 
 
 

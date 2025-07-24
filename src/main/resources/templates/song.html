@@ -13,7 +13,7 @@
 <body>
     <h1 th:text="${song.getTitolo()}"></h1>
     <span th:text="${song.getNomeArtista}" />
-    <div th:insert="~{fragments/buttons :: button('/', 'Home Page')}"></div>
+    <div th:insert="~{fragments/buttons :: button('/songs', 'Torna alla lista')}"></div>
 
 
 

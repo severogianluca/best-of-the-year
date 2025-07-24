@@ -5,11 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movie</title>
+
+    <!-- Boostrap -->
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.3/css/bootstrap.min.css}" />
+
 </head>
 
 <body>
     <h1 th:text="${movie.getTitolo()}"></h1>
-    <span th:text="${movie.getDurataMin}"/>
+    <span th:text="${movie.getDurataMin()}" />
+    <div th:insert="~{fragments/buttons :: button('/', 'Home Page')}"></div>
 
 
 
